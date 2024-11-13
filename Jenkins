@@ -10,7 +10,7 @@ pipeline {
 			stage ("Build") {
 				steps {
 					echo "Build with Docker"
-					sh "docker build -t web -f /adg/"
+					sh "docker build -t web -f /hh/Dockerfile ."
 				}
 			}
 			stage ("Push"){
