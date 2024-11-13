@@ -1,0 +1,31 @@
+pipeline {
+	agent any {
+		stages {
+			stage ("Clone") {
+				steps {
+					echo " Clone with Github"
+					git url: " ", branch: " "
+				}
+			}
+			stage ("Build") {
+				steps {
+					echo "Build with Docker"
+					sh "docker build -t web -f /adg/"
+				}
+			}
+			stage ("Push"){
+				steps {
+					echo "push to DockerHub"
+					
+				}
+			}
+			stage ("Deploy") {
+				steps {
+					echo "Deploy with K8S"
+					sh "kubectl apply -f /adg/d.yml"
+					sh ""kubectl apply -f /adg/s.yml"
+				}
+			}
+		}
+	}
+}
