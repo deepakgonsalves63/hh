@@ -4,7 +4,7 @@ pipeline {
 			stage ("Clone") {
 				steps {
 					echo " Clone with Github"
-					git url: " ", branch: " "
+					git url: "https://github.com/deepakgonsalves63/hh.git", branch: "main"
 				}
 			}
 			stage ("Build") {
