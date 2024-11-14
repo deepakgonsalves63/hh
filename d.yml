@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: deply
+  name: deply
 spec:
-   replicas: 2
-   Selector:
-      matchLabels:
-	       pd: pn
-	template:
-	  metadata:
-	       name: podname
-		   labels:
-		      pd: pn
-	  spec:
-	    containers:
-	       - name: c1
-		     image: deepakgonsalves63/web
-	         ports:
-	           - containerPort: 80
+  replicas: 2
+  selector:
+    matchLabels:
+      pd: pn
+  template:
+    metadata:
+      name: podname
+      labels:
+        pd: pn
+    spec:
+      containers:
+        - name: c1
+          image: deepakgonsalves63/web
+          ports:
+            - containerPort: 80
